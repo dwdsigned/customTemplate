@@ -1,0 +1,503 @@
+/* :root {
+  --primaryColor: #fff;
+  --navColor1: #21292c;
+  --navColor2: #aa3e39;
+  --navColor3: #aa6e39;
+  --navColor4: #236267;
+  --navColor5: #2c8437;
+} */
+
+body {
+  margin: 0;
+}
+
+section {
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: rgb(35 35 35);
+  font-size: 32px;
+  font-weight: normal;
+}
+
+/* Center text */
+.textCenter {
+  text-align: center;
+}
+
+.page__header {
+  background-color: #340BB7;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+}
+
+/* Navigation */
+nav {
+  z-index: 10;
+  position: fixed;
+  font-size: 24px;
+  letter-spacing: 3px;
+  /* padding: 25px; */
+  padding: 0;
+  width: 100vw;
+  background: #340BB7;
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  border: none;
+  height: 100px;
+  width: 100px;
+  margin: 0 0 0 25px;
+  background-image: url("./dwDev1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+/* Dynamic Navigation <ul> */
+.navbar__menu ul {
+  padding-left: 0;
+  padding-bottom: 0;
+  margin: 0;
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+/* Dynamic Navigation <li> */
+.navbar__menu li {
+  display: inline-block;
+}
+
+/* a {
+  margin-right: 25px;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+} */
+
+/* Formerly Dynamic a tag styling */
+.navbar__menu .menu__link {
+  margin-right: 25px;
+  display: inline-block;
+  padding: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(235 235 235);
+}
+
+.navbar__menu .menu__link:hover
+ {
+  color: rgb(253, 244, 101);
+  /* background-color: #2a15bc; */
+  transition: ease 0.3s all;
+  transform: scale(1.3);
+}
+
+/* .navbar__menu .menu__link:hover,
+.navbar__menu .menu__link:focus {
+  color: #fdf465;
+  background-color: #2a15bc;
+} */
+
+/* .navbar__menu .menu__link:focus {
+  color: rgb(253, 244, 101);
+  background-color: #1F066D;
+  border: #ccc;
+} */
+
+
+.menu__link.active {
+  color: rgb(253, 244, 101);
+  background-color: #1F066D;
+  border: #ccc;
+}
+
+/* --- Navigation Menu for mobile ------------------------------ */
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100vw);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100vw);
+}
+
+/* Nav Menu Items */
+nav,
+nav ul {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  list-style: none;
+}
+
+nav ul li {
+  height: 20%;
+  overflow: hidden;
+}
+
+nav li a {
+  position: relative;
+  top: 45%;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+nav li a:hover {
+  transform: scale(1.2);
+}
+
+nav li a::before {
+  content: "";
+  width: 25vw;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  opacity: 0;
+}
+
+nav li a:hover::before {
+  opacity: 1;
+}
+
+nav li:nth-of-type(1) {
+  background-color: var(--navColor1);
+}
+
+nav li:nth-of-type(2) {
+  background-color: var(--navColor2);
+}
+
+nav li:nth-of-type(3) {
+  background-color: var(--navColor3);
+}
+
+nav li:nth-of-type(4) {
+  background-color: var(--navColor4);
+}
+
+nav li:nth-of-type(5) {
+  background-color: var(--navColor5);
+}
+
+/* Slide in animation with delay for each */
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Slide out animation with delay for each */
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* --- Menu Bars ------------------------------------ */
+
+.menu-bars {
+  /* position: fixed;
+  top: 1rem;
+  right: 2rem; */
+  z-index: 10;
+  /* display: inline; */
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+/* End of slide-in-and-out menu */
+
+/* Section active style */
+section.active {
+  background: rgb(11, 179, 50);
+  background: linear-gradient(0deg, rgba(208, 21, 21, 0.4) 0%, rgba(65, 129, 5, .6) 100%);
+}
+
+
+section.active .landing__container::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+  background-color: aquamarine;
+}
+
+section.active .landing__container::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+  background-color: yellow;
+}
+
+/* Home Section */
+.title-group {
+  text-align: center;
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+}
+
+/* .image-container {
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-right: 25px;
+  width: auto;
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+}
+
+img {
+  height: 300px;
+  width: 300px;
+} */
+
+/* Projects Section */
+/* .buttons {
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+button {
+  min-width: 100px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 10px;
+  border: 2px solid var(--primary-color);
+  font-size: 15px;
+  outline: none;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+button:hover:not(.outline) {
+  filter: brightness(110%);
+}
+
+.primary {
+  background: var(--primary-color);
+  color: var(--on-primary);
+}
+
+.secondary {
+  border: 2px solid var(--secondary-color);
+}
+
+.secondary,
+.secondary:hover,
+.outline.secondary:hover {
+  background: var(--secondary-color);
+  color: var(--on-primary);
+}
+
+.outline {
+  background: var(--background);
+  color: var(--on-background);
+}
+
+.outline:hover {
+  background: var(--primary-color);
+  color: var(--on-primary);
+} */
+
+.text-box {
+  width: 40%;
+  text-align: justify;
+  background: rgb(0 0 0 / 50%);
+  color: var(--on-primary);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+p {
+  margin: 0;
+  line-height: 25px;
+}
+
+/* Contact Section */
+.fab {
+  font-size: 100px;
+  margin-right: 50px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.fab:hover {
+  color: var(--on-background);
+}
+
+
+
+/* #searchBar * {
+  display: inline-block;
+}
+
+#searchBar i {
+  height: 50px;
+  width: 50px;
+} */
+
+
+footer {
+  background-color: #340BB7;
+  color: rgb(235 235 235);
+  text-align: center;
+}
+
+#usePortrait {
+  display: none;
+}
+
+/* Mobile Menu */
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 600px) {
+  .menu-bars {
+    top: 0.5rem;
+    right: 1rem;
+  }
+}
+
+/* Check below for issues */
+@media only screen and (max-width: 900px) {
+  /* Dynamic Navigation <ul> */
+  /* #navbar__list {
+    display: none;
+  } */
+}
+
+
+@media only screen and (max-width: 330px) {
+  #logo {
+    border: none;
+    height: 100px;
+    width: 100px;
+    margin: 12px 0 12px 12px;
+    background-image: url("./dwDev1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }  
+}
