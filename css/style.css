@@ -12,11 +12,16 @@ body {
 }
 
 section {
-  min-height: 95vh;
+  min-height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+#section1 {
+  background-color: darkorchid;
+  background-image: url("../assets/heroBarberSample.jpg");
 }
 
 h1 {
@@ -65,7 +70,7 @@ nav {
   height: 100px;
   width: 100px;
   margin: 0 0 0 25px;
-  background-image: url("./dwDev1.svg");
+  background-image: url("../assets/dwDev1.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
