@@ -56,11 +56,13 @@ body {
 }
 
 section {
+
   min-height: 75vh;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  /* justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
 }
 
 #section1 {
@@ -75,6 +77,8 @@ section {
   margin-right: auto;
   margin-bottom: auto;
   margin-left: 5%;
+  justify-content: center;
+  align-items: center;
   /* background-color: rgb(0 0 0 / 0.1); */
 }
 
@@ -86,6 +90,24 @@ h2 {
   color: rgb(35 35 35);
   font-size: 32px;
   font-weight: normal;
+}
+
+#section2 {
+  background-color: whitesmoke;
+  background-image: url("../assets/posingCrossedNoBG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-position: left left;
+  justify-content: center;
+  align-items: center;
+}
+
+#section2 div {
+  margin-left: auto;
+  margin-right: 5em;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Center text */
@@ -396,6 +418,9 @@ nav li:nth-of-type(5) {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
 }
 
 #cta-buttonHero {
@@ -407,7 +432,7 @@ nav li:nth-of-type(5) {
   width: 100px;
 }
 
-/* Animated Background for CTA button */
+/* Animated Background for CTA button. Barberpole animation*/
 .heroButtonDiv {
   /* font-size: 2em;
   width: 2px;
@@ -417,15 +442,23 @@ nav li:nth-of-type(5) {
   background-image: repeating-linear-gradient(135deg, blue, blue 20px, white 20px, white 40px, red 40px, red 60px, white 60px, white 80px);
   /* Expanded the size of the image to prevent visual blips when animation loop repeats */
   background-size: 5000%;
-  animation: animatedBackground 100s linear infinite;
+  
+  animation: animatedBackground 200s linear infinite;
 }
 
 @keyframes animatedBackground {
-  from { background-position: 100% 0; }
-  to { background-position: -100% 0; }
+  from { background-position: 0 0; }
+  to { background-position: -100% 100%; }
 }
 
-
+/* .card {
+  width: 300px;
+  height: 400px;
+  border-radius: 15px;
+  padding: 0;
+  margin: 2rem;
+  background-color: whitesmoke;
+} */
 
 
 
@@ -465,8 +498,24 @@ section.active .landing__container::after {
 
 /* About Section */
 .about-container {
-  display: flex;
+  
+  /* display: flex; */
+  background-color: black;
+  background-image: url("../assets/posingCrossed.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
+
+/* #portrait {
+  
+  display: flex;
+  background-color: black;
+  background-image: url("../assets/posingCrossed.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+} */
 
 /* .image-container {
   border: 1px solid var(--secondary-color);
@@ -611,4 +660,126 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
   }  
+}
+
+
+/* Tachyons */
+.ba {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.b--black-10 {
+  border-color: rgba(0, 0, 0, .1);
+}
+
+.br2 {
+  border-radius: .25rem;
+}
+
+.br--top {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.db {
+  display: block;
+}
+
+.dt {
+  display: table;
+}
+
+.dtc {
+  display: table-cell;
+}
+
+.lh-copy {
+  line-height: 1.5;
+}
+
+.mw5 {
+  max-width: 16rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.dark-gray {
+  color: #333;
+}
+
+.mid-gray {
+  color: #555;
+}
+
+.pa2 {
+  padding: .5rem;
+}
+
+.mt1 {
+  margin-top: .25rem;
+}
+
+.mt2 {
+  margin-top: .5rem;
+}
+
+.mv0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mv4 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tr {
+  text-align: right;
+}
+
+.f5 {
+  font-size: 1rem;
+}
+
+.f6 {
+  font-size: .875rem;
+}
+
+.measure {
+  max-width: 30em;
+}
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 30em) {
+  .pb3-ns {
+      padding-bottom: 1rem;
+  }
+
+  .ph3-ns {
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+
+  .f4-ns {
+      font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .w-50-m {
+      width: 50%;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .w-25-l {
+      width: 25%;
+  }
 }
