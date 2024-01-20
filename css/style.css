@@ -18,14 +18,14 @@ body {
 }
 
 #topmostHeader {
-  padding: 1%;
+  border-radius: 0 0 20px 20px;
 }
 
 #topmostHeader p {
   margin-right: 10px;
 }
 
-#socialIconsDiv {
+.alignItems {
   align-items: center;
 }
 
@@ -98,6 +98,8 @@ h2 {
   padding-top: 25px;
   padding-bottom: 25px;
   display: flex;
+  position: sticky;
+  top: 0;
 }
 
 /* Navigation */
@@ -385,6 +387,52 @@ nav li:nth-of-type(5) {
 }
 
 /* End of slide-in-and-out menu */
+
+/* CTA Button in hero section */
+.heroButtonDiv {
+  background-color: white;
+  height: 100px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cta-buttonHero {
+  border: none;
+  background-color: rgb(25 25 25 / 1);
+  color: white;
+  text-align: center;
+  height: 50px;
+  width: 100px;
+}
+
+/* Animated Background for CTA button */
+.heroButtonDiv {
+  /* font-size: 2em;
+  width: 2px;
+  height: 150px;
+  border-radius: 1em;
+  padding: 0.5em 1em; */
+  background-image: repeating-linear-gradient(135deg, blue, blue 20px, white 20px, white 40px, red 40px, red 60px, white 60px, white 80px);
+  /* Expanded the size of the image to prevent visual blips when animation loop repeats */
+  background-size: 5000%;
+  animation: animatedBackground 100s linear infinite;
+}
+
+@keyframes animatedBackground {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+
+
+
+
+
+
+
+
 
 /* Section active style */
 section.active {
