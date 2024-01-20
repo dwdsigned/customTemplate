@@ -7,6 +7,16 @@
   --navColor5: #2c8437;
 } */
 
+.blackText {
+  color: rgb(25 25 25 / 1);
+}
+
+.white-text {
+  color: white;
+}
+
+
+
 body {
   margin: 0;
 }
@@ -87,7 +97,7 @@ h1 {
 }
 
 h2 {
-  color: rgb(35 35 35);
+  /* color: rgb(35 35 35); */
   font-size: 32px;
   font-weight: normal;
 }
@@ -105,10 +115,40 @@ h2 {
 
 #section2 div {
   margin-left: auto;
-  margin-right: 5em;
+  margin-left: 5em;
+  /* The below comment needs to be a media query */
+  /* margin-right: 5em; */
   display: flex;
   flex-direction: column;
 }
+
+#section2 h2 {
+  font-size: 4rem;
+}
+
+#section2 p {
+  font-size: 2rem;
+}
+
+#section3, #section4, #section5 {
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* #section3 */
+#section3 {
+  background-color: rgb(25 25 25 / 1);
+}
+
+#section3 h2 p{
+  color: whitesmoke;
+}
+
+/* Section 5 */
+#section5 {
+  background-color: rgb(25 25 25 / 1);
+}
+
 
 /* Center text */
 .textCenter {
@@ -210,6 +250,32 @@ nav {
   color: rgb(253, 244, 101);
   background-color: #1F066D;
   border: #ccc;
+}
+
+/* Services section */
+.container {
+  display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.container div {
+  
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  /* transition: all 1s; */
+  background-color: peru;
+}
+
+/* Gallery */
+.container img {
+  aspect-ratio: auto;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  /* transition: all 1s; */
+  background-color: peru;
 }
 
 /* --- Navigation Menu for mobile ------------------------------ */
@@ -413,14 +479,15 @@ nav li:nth-of-type(5) {
 /* CTA Button in hero section */
 .heroButtonDiv {
   background-color: white;
-  height: 100px;
-  width: 160px;
+  height: 81px;
+  width: 132px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2em;
+  padding: 0;
 }
 
 #cta-buttonHero {
@@ -486,9 +553,9 @@ section.active .landing__container::after {
   background-color: yellow;
 }
 
-.white-text {
+/* .white-text {
   color: white;
-}
+} */
 
 
 /* Home Section */
@@ -623,8 +690,8 @@ p {
 
 
 footer {
-  background-color: #340BB7;
-  color: rgb(235 235 235);
+  background-color: rgb(25 25 25 / 1);
+  color: whitesmoke;
   text-align: center;
 }
 
